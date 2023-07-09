@@ -1,0 +1,51 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"TanTai2",
+    "password":"Tai123"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"TanTai2",
+    "password":"Tai123"
+}
+
+###
+
+
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGExODEzZjY0ZjViMmY2NjNiNzFjYTgiLCJpYXQiOjE2ODgzMDY1Mjh9.LGM27vKsu6eD24-aicemkcG00dDgIXQs83hWSHJ2K7g
+
+{
+  "title": "Test 6",
+  "description": "Test 6",
+  "url": "Test6.com",
+  "status": "To Learn"
+}
+
+
+###
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGExODE0YjY0ZjViMmY2NjNiNzFjYWQiLCJpYXQiOjE2ODgzMDY2NTN9.aCtVBmX2sM6x8y_GReZf88Mih9IX2-X85kkEQRga-MU
+
+###
+PUT http://localhost:5000/api/posts/64a1834664f5b2f663b71cc4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGExODE0YjY0ZjViMmY2NjNiNzFjYWQiLCJpYXQiOjE2ODgzMDY2NTN9.aCtVBmX2sM6x8y_GReZf88Mih9IX2-X85kkEQRga-MU
+Content-Type: application/json
+
+{
+    "title": "Test 121",
+  "description": "Test 11",
+  "url": "Test6.com",
+  "status": "To Learn"
+}
+
+###
+DELETE  http://localhost:5000/api/posts/64a1834664f5b2f663b71cc4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGExODE0YjY0ZjViMmY2NjNiNzFjYWQiLCJpYXQiOjE2ODgzMDY2NTN9.aCtVBmX2sM6x8y_GReZf88Mih9IX2-X85kkEQRga-MU
