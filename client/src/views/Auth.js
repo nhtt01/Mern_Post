@@ -1,14 +1,22 @@
-import React from 'react'
-import LoginForm from '../components/auth/LoginForm'
-import RegisterForm from '../components/auth/RegisterForm'
+import React from "react";
+import LoginForm from "../components/auth/LoginForm";
+import RegisterForm from "../components/auth/RegisterForm";
 
-function Auth({authRoute}) {
+function Auth({ authRoute }) {
   return (
-   <>
-    { authRoute==='login' && <LoginForm/>}
-    { authRoute==='register' && <RegisterForm/>}
-   </>
-  )
+    <>
+      <div className="landing">
+        <div className="dark-overlay">
+          <div className="landing-inner">
+            <h1>LearnIt</h1>
+            <h4>Keep track of what you are learning</h4>
+            {authRoute === "login" && <LoginForm />}
+            {authRoute === "register" && <RegisterForm />}
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Auth
+export default Auth;
