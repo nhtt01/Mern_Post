@@ -3,6 +3,13 @@ import LoginForm from "../components/auth/LoginForm";
 import RegisterForm from "../components/auth/RegisterForm";
 
 function Auth({ authRoute }) {
+  let body = (
+    <>
+      {authRoute === "login" && <LoginForm />}
+      {authRoute === "register" && <RegisterForm />}
+    </>
+  );
+
   return (
     <>
       <div className="landing">
@@ -10,8 +17,7 @@ function Auth({ authRoute }) {
           <div className="landing-inner">
             <h1>LearnIt</h1>
             <h4>Keep track of what you are learning</h4>
-            {authRoute === "login" && <LoginForm />}
-            {authRoute === "register" && <RegisterForm />}
+            {body}
           </div>
         </div>
       </div>

@@ -19,8 +19,8 @@ const connectDB = async () => {
     }
 }
 connectDB();
-const PORT = 5000;
-app.listen(PORT, () => {
+
+app.listen(process.env.PORT, () => {
     console.log("Server is running");
 })
 
