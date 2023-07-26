@@ -3,6 +3,24 @@ const router = require("express").Router();
 const argon2 = require("argon2");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
+const verifyTokens = require("../middleware/auth");
+
+//@route GET api/auth
+// @desc check if user is logged in
+// @access Public
+router.post('/',verifyTokens,async(req,res)=>{
+  try {
+    const user = await User.findById(req.userId).select('-password');
+    if(!user) return res.status(400).json({success:false,message:'User not found'});
+    res.json({success:true,user});
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+})
+
+
+
 //@route POST api/auth/register
 // @desc Register User
 // @access Public

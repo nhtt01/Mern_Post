@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
+const cors = require('cors');
 const authRouter = require('./routes/auth.js');
 const postRouter = require('./routes/post.js');
 const connectDB = async () => {
@@ -26,6 +27,7 @@ app.listen(process.env.PORT, () => {
 
 
 app.use(express.json());
+app.use(cors());
 app.use('/api/auth', authRouter);
 app.use('/api/posts', postRouter)
 
